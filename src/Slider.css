@@ -1,0 +1,4 @@
+/* Smooth scrolling for the slider */
+.slider-track {
+  scroll-behavior: smooth;
+}
