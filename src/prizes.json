@@ -1,0 +1,38 @@
+{
+    "items": [{
+            "name": "프리미엄 모니터",
+            "grade": "1등",
+            "count": 1,
+            "winningNumbers": [847],
+            "image": "모니터.png"
+        },
+        {
+            "name": "네이버페이",
+            "grade": "2등",
+            "count": 3,
+            "winningNumbers": [123, 596, 982],
+            "image": "네이버페이.png"
+        },
+        {
+            "name": "게이밍장패드",
+            "grade": "3등",
+            "count": 5,
+            "winningNumbers": [3, 27, 58, 9, 46],
+            "image": "게이밍장패드.png"
+        },
+        {
+            "name": "메가커피",
+            "grade": "4등",
+            "count": 20,
+            "winningNumbers": [60, 472, 351, 98, 381, 999, 500, 7, 54, 31, 648, 114, 64, 837, 773, 206, 83, 631, 929, 10],
+            "image": "메가커피.jpg"
+        },
+        {
+            "name": "스티커",
+            "grade": "5등",
+            "count": 981,
+            "winningNumbers": [],
+            "image": "스티커.jpg"
+        }
+    ]
+}
