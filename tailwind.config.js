@@ -53,6 +53,24 @@ export default {
                 label: ["pretendard-regular"],
                 body: ["pretendard-thin"],
             },
+            // 애니메이션 추가
+            keyframes: {
+                fadeIn: {
+                    "0%": { opacity: "0", transform: "scale(0.9)" },
+                    "100%": { opacity: "1", transform: "scale(1)" },
+                },
+                fadeOut: {
+                    "0%": { opacity: "1", transform: "scale(1)" },
+                    "100%": { opacity: "0", transform: "scale(0.9)" },
+                },
+            },
+            animation: {
+                fadeIn: "fadeIn 300ms ease-out",
+                fadeOut: "fadeOut 300ms ease-out",
+            },
+            boxShadow: {
+                glow: "0 0 20px 5px rgba(59, 130, 246, 0.7)", // blue glow
+            },
         },
     },
     plugins: [],
