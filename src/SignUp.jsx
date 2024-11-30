@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'; // PropTypes import
 
 const SignUp = ({ onLogin }) => {
     const [username, setUsername] = useState('');
@@ -52,6 +53,11 @@ const SignUp = ({ onLogin }) => {
             </div>
         </div>
     );
+};
+
+// PropTypes 설정
+SignUp.propTypes = {
+    onLogin: PropTypes.func.isRequired, // onLogin은 함수여야 함
 };
 
 export default SignUp;
