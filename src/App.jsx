@@ -80,9 +80,9 @@ const App = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-        {/* 행운 뽑기 */}
-        <div className="w-[500px] p-8 bg-gradient-to-b from-neutral-70 via-neutral-80 to-neutral-90 rounded-xl mb-12 shadow-glow">
+        <div className="flex flex-1 flex-col items-center min-h-screen bg-gray-900 pt-10 md:pt-20">
+            {/* 행운 뽑기 */}   
+            <div className="w-[90%] md:w-[500px] p-8 bg-gradient-to-b from-neutral-70 via-neutral-80 to-neutral-90 rounded-xl mb-10 shadow-glow">
             <h1 className="mb-6 text-3xl font-semibold text-white flex items-center justify-center space-x-4">
                 <img src="/img/HEZ_GG.svg" className="w-[80px] md:w-[100px]" alt="HEZ GG" />
                 <span className="text-white">행운 뽑기</span>
@@ -97,81 +97,76 @@ const App = () => {
             >
                 {isAnimating ? '추첨 중...' : '추첨 시작'}
             </button>
-        </div>
-    
-        {/* 남은 상품 */}
-        <div className="w-[80%] max-w-[1200px] p-8 bg-gradient-to-tr from-primary-40 via-teal-400 to-blue-400 rounded-xl shadow-lg mt-12">
-            <h2 className="mb-6 text-2xl font-semibold text-white text-center">행운 뽑기 상품</h2>
-            <ul className="flex flex-wrap justify-center gap-8 overflow-x-auto">
-                {prizes.map((prize) => (
-                    <li key={prize.name} className="flex flex-col items-center flex-shrink-0 w-[200px]">
-                        <img
-                            src={`/img/${prize.image}`}
-                            alt={prize.name}
-                            className="w-[200px] h-[200px] object-cover rounded-[25px] shadow-md mb-4"
-                        />
-                        <span className="text-xl font-semibold text-neutral-70 text-center">
-                            {prize.grade} {prize.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    
-        {showModal && (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div
-            className={`w-[700px] h-[400px] bg-neutral-80 p-8 rounded-xl shadow-xl transition-transform transform ${
-                isExiting ? 'animate-fadeOut' : 'animate-fadeIn'
-            } flex justify-between`}  // 좌우로 나누기 위해 flex 사용
-        >
-            {/* 왼쪽: 당첨번호와 상품 정보 */}
-            <div className="flex flex-col justify-center text-center w-1/2">
-                <h1 className="mb-4 text-4xl font-extrabold text-white uppercase tracking-widest">
-                    당첨번호
-                </h1>
-                <div className="py-4 text-6xl font-extrabold bg-gradient-to-b from-primary-40 to-primary-60 text-transparent bg-clip-text">
-                    {finalNumber}
-                </div>
-                <div className="py-4 text-4xl font-semibold text-primary-50">
-                    {selectedPrizeGrade}{' '}
-                    <span className="text-3xl bg-neutral-10 text-transparent bg-clip-text">
-                        축하드립니다!
-                    </span>
-                </div>
             </div>
 
-            {/* 오른쪽: 상품 이미지 */}
-            <div className="flex justify-center items-center w-1/2 mt-2">
-                <div className="inline-block px-6 py-4 rounded-lg text-2xl text-neutral-10 text-center font-medium tracking-tight shadow-md">
-                    <span className="block text-3xl font-semibold mb-4">상품</span>
-                    {/* 상품 이미지 표시 */}
-                    <img
-                        src={`/img/${prizes.find((prize) => prize.name === selectedPrize)?.image}`}
-                        alt={selectedPrize}
-                        className="w-[200px] h-[200px] object-cover rounded-[25px] shadow-md"
-                    />
+            {/* 남은 상품 */}
+            <div className="w-[90%] sm:w-[80%] max-w-[1200px] p-8 bg-gradient-to-tr from-primary-40 via-teal-400 to-blue-400 rounded-xl shadow-lg mt-12">
+                <h2 className="mb-6 text-2xl font-semibold text-white text-center">행운 뽑기 상품</h2>
+                <ul className="flex flex-wrap justify-center gap-8 overflow-x-auto">
+                    {prizes.map((prize) => (
+                        <li key={prize.name} className="flex flex-1 flex-col items-center flex-shrink-0 w-[200px]">
+                            <img
+                                src={`/img/${prize.image}`}
+                                alt={prize.name}
+                                className="w-[150px] h-[150px] object-cover rounded-[25px] shadow-md mb-4"
+                            />
+                            <span className="text-xs sm:text-lg font-semibold text-neutral-70 text-center">
+                                {prize.grade} {prize.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {showModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div
+                        className={`w-[90%] md:w-[700px] h-[90%] md:h-[400px] bg-neutral-80 p-8 rounded-xl shadow-xl transition-transform transform ${
+                            isExiting ? 'animate-fadeOut' : 'animate-fadeIn'
+                        } flex md:flex-row flex-col justify-between`} // 반응형으로 좌우 배치 변경
+                    >
+                        {/* 왼쪽: 당첨번호와 상품 정보 */}
+                        <div className="flex flex-col justify-center text-center w-full md:w-1/2">
+                            <h1 className="mb-4 text-4xl font-extrabold text-white uppercase tracking-widest">
+                                당첨번호
+                            </h1>
+                            <div className="py-4 text-6xl font-extrabold bg-gradient-to-b from-primary-40 to-primary-60 text-transparent bg-clip-text">
+                                {finalNumber}
+                            </div>
+                            <div className="py-4 text-4xl font-semibold text-primary-50">
+                                {selectedPrizeGrade}{' '}
+                                <span className="text-3xl bg-neutral-10 text-transparent bg-clip-text">
+                                    축하드립니다!
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* 오른쪽: 상품 이미지 */}
+                        <div className="flex justify-center items-center w-full md:w-1/2 mt-2">
+                            <div className="inline-block px-6 py-4 rounded-lg text-2xl text-neutral-10 text-center font-medium tracking-tight shadow-md">
+                                <span className="block text-3xl font-semibold mb-4">상품</span>
+                                {/* 상품 이미지 표시 */}
+                                <img
+                                    src={`/img/${prizes.find((prize) => prize.name === selectedPrize)?.image}`}
+                                    alt={selectedPrize}
+                                    className="w-[200px] h-[200px] object-cover rounded-[25px] shadow-md"
+                                />
+                            </div>
+                        </div>
+
+                        {/* 닫기 버튼 */}
+                        <div className="absolute top-6 right-6">
+                            <button
+                                onClick={closeModal}
+                                className="absolute top right-2 text-error-10 text-3xl font-semibold hover:text-error-20 transition-transform transform"
+                            >
+                                &times; {/* X 모양의 문자 */}
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            {/* 닫기 버튼 */}
-            <div className="absolute top-6 right-6">
-            <button
-                onClick={closeModal}
-                className="absolute top right-2 text-error-10 text-3xl font-semibold hover:text-error-20 transition-transform transform "
-            >
-                &times; {/* X 모양의 문자 */}
-            </button>
-            </div>
+            )}
         </div>
-    </div>
-)}
-
-
-
-
-    </div>
-    
     );
 };
 
