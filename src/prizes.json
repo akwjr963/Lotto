@@ -16,21 +16,21 @@
         {
             "name": "게이밍장패드",
             "grade": "3등",
-            "count": 5,
-            "winningNumbers": [3, 27, 58, 9, 46],
+            "count": 4,
+            "winningNumbers": [3, 27, 58, 9],
             "image": "게이밍장패드.png"
         },
         {
             "name": "메가커피",
             "grade": "4등",
-            "count": 20,
-            "winningNumbers": [60, 472, 351, 98, 381, 999, 500, 7, 54, 31, 648, 114, 64, 837, 773, 206, 83, 631, 929, 10],
+            "count": 14,
+            "winningNumbers": [60, 472, 351, 98, 381, 500, 7, 54, 64, 206, 83, 631, 929, 10],
             "image": "메가커피.jpg"
         },
         {
             "name": "스티커",
             "grade": "5등",
-            "count": 981,
+            "count": 974,
             "winningNumbers": [],
             "image": "스티커.jpg"
         }
