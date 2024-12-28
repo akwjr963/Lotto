@@ -3,7 +3,7 @@ import prizesData from "./prizes.json"; // json 파일 임포트
 
 const App = () => {
     const [prizes, setPrizes] = useState([]);
-    const [availableNumbers, setAvailableNumbers] = useState(Array.from({ length: 1000 }, (_, i) => i + 1));
+    const [availableNumbers, setAvailableNumbers] = useState(Array.from({ length: 350 }, (_, i) => i + 1));
     const [currentNumber, setCurrentNumber] = useState(null);
     const [finalNumber, setFinalNumber] = useState(null);
     const [selectedPrize, setSelectedPrize] = useState(null);
@@ -75,7 +75,7 @@ useEffect(() => {
         }
 
         const interval = setInterval(() => {
-            setCurrentNumber(Math.floor(Math.random() * 1000) + 1);
+            setCurrentNumber(Math.floor(Math.random() * 350) + 1);
         }, 50);
 
         setTimeout(() => {
